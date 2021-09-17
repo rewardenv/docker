@@ -1,0 +1,27 @@
+---
+name: Docker Image
+on:
+  schedule:
+    - cron: "0 6 1 * *"
+  push:
+    paths:
+      - .trigger
+    branches:
+      - main
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        docker_version:
+          - "20.10.7"
+          - "20.10.8"
+    steps:
+      - uses: actions/checkout@v1
+      - run: bash ./scripts/build.sh
+        env:
+          DOCKER_VERSION: ${{ matrix.docker_version }}
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          PUSH: "true"
