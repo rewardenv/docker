@@ -4,8 +4,8 @@ on:
   schedule:
     - cron: "0 6 1 * *"
   push:
-    paths:
-      - .trigger
+#    paths:
+#      - .trigger
     branches:
       - main
 jobs:
