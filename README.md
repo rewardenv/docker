@@ -23,5 +23,6 @@ To use it inside Bitbucket Pipelines:
 - "20.10.7"
 - "20.10.8"
 
+---
 
-* If you'd like to add more versions, feel free to modify the [workflow](https://github.com/rewardenv/docker/blob/main/.github/workflows/build.yml) and send a PR.
+*If you'd like to add more versions, feel free to modify the [workflow](https://github.com/rewardenv/docker/blob/main/.github/workflows/build.yml) and send a PR.
